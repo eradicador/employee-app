@@ -1,20 +1,23 @@
 //import react module
 import React from "react";
+import "../styles/searchbox.css";
 
-function SearchForm(props) {
+const SearchForm = (props) => {
+
     return (
         <form>
-            <div className="form-group">
+            <div className="searchbox">
                 <label htmlFor="search">Search:</label>
                 <input
-                    onChange={props.handleInputChange}
+                    onChange={e => props.handleInputChange(e)}
                     value={props.search}
                     name="search"
                     type="text"
                     className="form-control"
-                    placeholder="Search for an Employee"
-                    id="search"
+                    placeholder="Search Employee"
+                   
                 />
+                <button onClick={props.handleFormSubmit}>SEARCH</button>
             </div>
         </form>
     );

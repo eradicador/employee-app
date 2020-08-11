@@ -8,6 +8,6 @@ export default {
     //function call search on the object
   search: function(query) {
       //use axios with the get method
-    return axios.get(BASEURL + query);
+    return axios.get(BASEURL);
   }
 };

@@ -4,49 +4,66 @@ import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 
-class SearchResultContainer extends Component {
+import EmpTable from "./Table";
+
+
+class EmployeeTable extends Component {
   state = {
     search: "",
-    results: []
+    results: [],
+    original:[]
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
-  componentDidMount() {
-    this.searchEmployee("users");
-  }
 
-  searchEmployee = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
-      .catch(err => console.log(err));
-  };
-
-  handleInputChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  // When the form is submitted, search the Giphy API for `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchEmployee(this.state.search);
-  };
-
-  render() {
-    return (
-      <div>
-        <SearchForm
-          search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-        />
-        <ResultList results={this.state.results} />
-      </div>
-    );
-  }
+// When this component mounts, search the Giphy API for pictures of kittens
+componentDidMount() {
+  console.log("results:", this.state.results)
+  this.searchEmployee();
 }
 
-export default SearchResultContainer;
+searchEmployee = () => {
+  console.log("search")
+  API.search()
+    .then(res =>
+      {console.log("data:", res)
+         this.setState({ results: res.data.results, original: res.data.results })
+      })
+    .catch(err => console.log(err));
+};
+
+handleInputChange = event => {
+  const name = event.target.name;
+  const value = event.target.value;
+  console.log("---->", name,value)
+  this.setState({
+    [name]: value
+  });
+};
+
+// When the form is submitted, search the Giphy API for `this.state.search`
+handleFormSubmit = event => {
+  event.preventDefault();
+  console.log("name search: ", this.state.search)
+// let newData = original.filter(emp=> emp.name.first.include(this.state.search) filter de array sobre el original 
+// update the results this.setState({results: newData})
+
+  // this.searchEmployee(this.state.search);
+};
+
+render() {
+  return (
+    <div>
+      <SearchForm
+        search={this.state.search}
+        handleFormSubmit={this.handleFormSubmit}
+        handleInputChange={this.handleInputChange}
+      />
+      {this.state.results.length > 0 ?
+       (<EmpTable results={this.state.results} />):(<p></p>)
+  }
+    </div>
+  );
+}
+}
+
+export default EmployeeTable;
