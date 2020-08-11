@@ -1,11 +1,11 @@
 
- button {
+button {
     border: 1px solid black;
     color:white;
     background-color: rgb(12, 99, 66);;
-}
+};
 
 button:hover {
     background-color: darkgoldenrod;
     color: #ffffff;
-}
+};

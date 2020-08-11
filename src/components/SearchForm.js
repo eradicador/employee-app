@@ -9,8 +9,8 @@ const SearchForm = (props) => {
     return (
         <Row>
             <Col></Col>
-            <Col>
-                <div className="searchbox">
+            <Col className="searchbox pb-3">
+                <div>
                     <form>
                         <input
                             onChange={e => props.handleInputChange(e)}
