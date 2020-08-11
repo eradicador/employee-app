@@ -1,7 +1,7 @@
 //import react module
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
-import ResultList from "./ResultList";
+// import ResultList from "./ResultList";
 import API from "../utils/API";
 
 import EmpTable from "./Table";

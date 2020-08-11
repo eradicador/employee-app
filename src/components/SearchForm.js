@@ -1,25 +1,32 @@
 //import react module
 import React from "react";
-import "../styles/searchbox.css";
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import "../styles/SearchForm.css";
 
 const SearchForm = (props) => {
 
     return (
-        <form>
-            <div className="searchbox">
-                <label htmlFor="search">Search:</label>
-                <input
-                    onChange={e => props.handleInputChange(e)}
-                    value={props.search}
-                    name="search"
-                    type="text"
-                    className="form-control"
-                    placeholder="Search Employee"
-                   
-                />
-                <button onClick={props.handleFormSubmit}>SEARCH</button>
-            </div>
-        </form>
+        <Row>
+            <Col></Col>
+            <Col>
+                <div className="searchbox">
+                    <form>
+                        <input
+                            onChange={e => props.handleInputChange(e)}
+                            value={props.search}
+                            name="search"
+                            type="text"
+                            className="form-control mr-sm-2"
+                            placeholder="Search Employee"
+
+                        />
+                        <button onClick={props.handleFormSubmit}>SEARCH</button>
+                    </form>
+                </div>
+            </Col>
+            <Col></Col>
+        </Row>
     );
 }
 

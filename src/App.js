@@ -1,7 +1,7 @@
 //import react module
 import React from "react";
 //import the components for the main page 
-import Main from "./components/Main";
+
 import SearchForm from "./components/SearchForm"
 import Table from "./components/Table"
 import Wrapper from "./components/Wrapper";
@@ -16,7 +16,7 @@ function App() {
         <Header />
         <EmployeeTable />
 
-        <Main />
+        
       {/* </Wrapper> */}
     </div>
   );
