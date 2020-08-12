@@ -18,10 +18,10 @@ const SearchForm = (props) => {
                             name="search"
                             type="text"
                             className="form-control mr-sm-2"
-                            placeholder="Search Employee"
+                            placeholder="Search Employee by Fisrt Name"
 
                         />
-                        <button onClick={props.handleFormSubmit}>SEARCH</button>
+                        {/* <button onClick={props.handleSearch1}>SEARCH</button> */}
                     </form>
                 </div>
             </Col>
