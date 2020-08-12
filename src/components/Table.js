@@ -1,6 +1,6 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
-
+import "../styles/Table.css"
 const EmpTable = ({results}) => {
 
 console.log(results)
@@ -12,7 +12,8 @@ console.log(results)
             <thead>
                 <tr>
                     <th>Image</th>
-                    <th>First Name</th>
+                    {/* <th>First Name</th> */}
+                    <th onClick={results.sortByName}>First Name</th>
                     <th>Last Name</th>
                     <th>Cell Phone</th>
                     <th>Email</th>
