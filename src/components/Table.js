@@ -18,7 +18,7 @@ function EmpTable(props) {
             <tbody>
                 {props.results.map(emp =>
                     <tr>
-                        <td><img src={emp.picture.medium}></img></td>
+                        <td><img src={emp.picture.medium} alt="users pictures"></img></td>
                         <td>{emp.name.first}</td>
                         <td>{emp.name.last}</td>
                         <td>{emp.cell}</td>
